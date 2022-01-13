@@ -226,7 +226,9 @@ $receber = ($total_dinheiro + $total_credito + $total_debito + $total_pix + $tot
 
                 </td>
                 <td style="text-align:center; font-weight:600; font-size:16px; border:1px solid #fff;">**** MÃO DE OBRA ****</td>
-                <td style="text-align:right; border:1px solid #fff;">Data de Emissão: <?php echo date("d/m/Y") ?><br></td>
+                <td style="text-align:right; border:1px solid #fff;margin-left:-10">
+                    <?php echo "Data: " . date('d/m/Y', strtotime($dataInicio));
+                    echo " á " . date('d/m/Y', strtotime($dataFim))  ?><br></td>
 
             </tr>
         </tbody>
