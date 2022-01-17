@@ -26,7 +26,7 @@ foreach ($listar as $item) {
                     
                       <td style="text-align: center;">
 
-                      <a href="../movimentacao/movimentacao-list.php?id=' . $item->id . '">
+                      <a href="../movimentacao/movimentacao-list.php?id=' . $item->id . '&data='.$item->data.'">
                       <button type="button" class="btn btn-primary"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> &nbsp;  &nbsp;  INICIAR</button>
                       </a>
                      

@@ -124,16 +124,7 @@ $resultados = strlen($resultados) ? $resultados : '<tr>
 
 //PAGINAÇÂO
 
-$paginacao = '';
-$paginas = $pagination->getPages();
 
-foreach ($paginas as $key => $pagina) {
-   $class = $pagina['atual'] ? 'btn-primary' : 'btn-secondary';
-   $paginacao .= '<a href="?pagina=' . $pagina['pagina'] . '&' . $gets . '">
-
-                  <button type="button" class="btn ' . $class . '">' . $pagina['pagina'] . '</button>
-                  </a>';
-}
 
 ?>
 
@@ -226,7 +217,7 @@ foreach ($paginas as $key => $pagina) {
 
 </section>
 
-<?= $paginacao ?>
+
 
 
 <div class="modal fade" id="editmodal2">

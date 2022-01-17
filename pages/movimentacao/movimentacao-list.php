@@ -15,6 +15,7 @@ Login::requireLogin();
 if(isset($_GET['id'])){
 
     $idcaixa = $_GET['id'];
+    $data    = $_GET['data'];
  
 }
 

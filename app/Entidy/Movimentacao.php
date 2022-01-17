@@ -10,6 +10,7 @@ class Movimentacao
 {
 
     public $id;
+    public $data;
     public $cartao;
     public $dinheiro;
     public $debito;
@@ -32,7 +33,8 @@ class Movimentacao
 
         $this->id = $obdataBase->insert([
 
-            'cartao'                => $this->cartao,
+            'data'                   => $this->data,
+            'cartao'                 => $this->cartao,
             'dinheiro'               => $this->dinheiro,
             'debito'                 => $this->debito,
             'pix'                    => $this->pix,
@@ -57,7 +59,8 @@ class Movimentacao
     {
         return (new Database('movimentacoes'))->update('id = ' . $this->id, [
 
-            'cartao'                => $this->cartao,
+            'data'                   => $this->data,
+            'cartao'                 => $this->cartao,
             'dinheiro'               => $this->dinheiro,
             'debito'                 => $this->debito,
             'pix'                    => $this->pix,

@@ -26,7 +26,7 @@ $where = implode(' AND ', $condicoes);
 
 $qtd = Alinhamento:: getQtd($where);
 
-$pagination = new Pagination($qtd, $_GET['pagina'] ?? 1, 5);
+$pagination = new Pagination($qtd, $_GET['pagina'] ?? 1, 100);
 
 $listar = Alinhamento::getList('al.id as id,
 al.data1,

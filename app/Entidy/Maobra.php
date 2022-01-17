@@ -10,6 +10,7 @@ class Maobra
 {
 
     public $id;
+    public $data;
     public $cartao;
     public $dinheiro;
     public $debito;
@@ -33,6 +34,7 @@ class Maobra
         $this->id = $obdataBase->insert([
 
             'cartao'                   => $this->cartao,
+            'data'                     => $this->data,
             'dinheiro'                 => $this->dinheiro,
             'debito'                   => $this->debito,
             'pix'                      => $this->pix,
@@ -57,6 +59,7 @@ class Maobra
     {
         return (new Database('maobra'))->update('id = ' . $this->id, [
             
+            'data'                     => $this->data,
             'cartao'                   => $this->cartao,
             'dinheiro'                 => $this->dinheiro,
             'debito'                   => $this->debito,

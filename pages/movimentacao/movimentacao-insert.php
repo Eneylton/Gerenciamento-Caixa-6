@@ -29,12 +29,15 @@ $valor_jefferson = 0;
 $valor_loja = 0;
 $total_loja = 0;
 $maobra_al = 0;
+$dataCaixa = "";
 
 Login::requireLogin();
 
 $agora = date('Y-m-d');
 
 if(isset($_POST['idcaixa'])){
+
+   $dataCaixa = $_POST['datcaixa'];
 
     $din1               = $_POST['dinheiro'];
     $din2               = str_replace(".", "", $din1);
@@ -80,7 +83,7 @@ if(isset($_POST['idcaixa'])){
           $maobra_al = ($maobra5 / 2);
 
           $al = new Alinhamento;
-          $al->data = $agora;
+          $al->data = $dataCaixa;
           $al->valor1 = $maobra_al;
           $al->valor2 = $maobra_al;
           $al->caixa_id = $_POST['idcaixa'];
@@ -88,7 +91,7 @@ if(isset($_POST['idcaixa'])){
           $al->cadastar();
 
           $loja = new Loja;
-          $loja->data = $agora;
+          $loja->data = $dataCaixa;
           $loja->caixa_id = $_POST['idcaixa'];
           $loja->veiculo = $_POST['veiculo'];
           $loja->placa = $_POST['placa'];
@@ -103,6 +106,7 @@ if(isset($_POST['idcaixa'])){
           $obra = new Maobra;
 
         
+          $obra->data = $dataCaixa;
           $obra->cartao = $maobra_al;
           $obra->caixa_id = $_POST['idcaixa'];
           $obra->veiculo = $_POST['veiculo'];
@@ -130,7 +134,8 @@ if(isset($_POST['idcaixa'])){
         
           
           $comissao = new Comissao;
-          $comissao->data = $hoje;
+          $comissao->data = $dataCaixa;
+          $comissao->data1 = $dataCaixa;
           $comissao->caixa_id = $_POST['idcaixa'];
           $comissao->veiculo = $_POST['veiculo'];
           $comissao->placa = $_POST['placa'];
@@ -143,7 +148,8 @@ if(isset($_POST['idcaixa'])){
           $comissao->cadastar();
 
           $loja = new Loja;
-          $loja->data = $hoje;
+          $loja->data = $dataCaixa;
+          $loja->data1 = $dataCaixa;
           $loja->caixa_id = $_POST['idcaixa'];
           $loja->veiculo = $_POST['veiculo'];
           $loja->placa = $_POST['placa'];
@@ -168,6 +174,7 @@ if(isset($_POST['idcaixa'])){
 
         $obra = new Maobra;
 
+        $obra->data = $dataCaixa;
         $obra->dinheiro = $valor2;
         $obra->cartao = $valor2;
         $obra->caixa_id = $_POST['idcaixa'];
@@ -185,7 +192,7 @@ if(isset($_POST['idcaixa'])){
         $valorPag = $pagamento->valor;
         $saldo = ($valorPag + $valor_jefferson);
 
-        $pagamento->data  =  $agora;
+        $pagamento->data  =  $dataCaixa;
         $pagamento->valor =  $saldo;
         $pagamento->saldo =  $saldo;
         $pagamento->atualizar();
@@ -197,6 +204,7 @@ if(isset($_POST['idcaixa'])){
         
         $obra = new Maobra;
 
+        $obra->data = $dataCaixa;
         $obra->dinheiro = $valor2;
         $obra->debito = $valor2;
         $obra->caixa_id = $_POST['idcaixa'];
@@ -214,7 +222,7 @@ if(isset($_POST['idcaixa'])){
         $valorPag = $pagamento->valor;
         $saldo = ($valorPag + $valor_jefferson );
 
-        $pagamento->data  =  $agora;
+        $pagamento->data  =  $dataCaixa;
         $pagamento->valor =  $saldo;
         $pagamento->saldo =  $saldo;
         $pagamento->atualizar();
@@ -226,6 +234,7 @@ if(isset($_POST['idcaixa'])){
 
         $obra = new Maobra;
 
+        $obra->data = $dataCaixa;
         $obra->dinheiro = $valor2;
         $obra->pix = $valor2;
         $obra->caixa_id = $_POST['idcaixa'];
@@ -243,7 +252,7 @@ if(isset($_POST['idcaixa'])){
         $valorPag = $pagamento->valor;
         $saldo = ($valorPag + $valor_jefferson );
 
-        $pagamento->data  =  $agora;
+        $pagamento->data  =  $dataCaixa;
         $pagamento->valor =  $saldo;
         $pagamento->saldo =  $saldo;
         $pagamento->atualizar();
@@ -255,6 +264,7 @@ if(isset($_POST['idcaixa'])){
 
         $obra = new Maobra;
 
+        $obra->data = $dataCaixa;
         $obra->dinheiro = $valor2;
         $obra->transferencia = $valor2;
         $obra->caixa_id = $_POST['idcaixa'];
@@ -272,7 +282,7 @@ if(isset($_POST['idcaixa'])){
         $valorPag = $pagamento->valor;
         $saldo = ($valorPag + $valor_jefferson );
 
-        $pagamento->data  =  $agora;
+        $pagamento->data  =  $dataCaixa;
         $pagamento->valor =  $saldo;
         $pagamento->saldo =  $saldo;
         $pagamento->atualizar();
@@ -284,6 +294,7 @@ if(isset($_POST['idcaixa'])){
 
         $obra = new Maobra;
 
+        $obra->data = $dataCaixa;
         $obra->cartao = $valor2;
         $obra->debito = $valor2;
         $obra->caixa_id = $_POST['idcaixa'];
@@ -301,7 +312,7 @@ if(isset($_POST['idcaixa'])){
         $valorPag = $pagamento->valor;
         $saldo = ($valorPag + $valor_jefferson );
 
-        $pagamento->data  =  $agora;
+        $pagamento->data  =  $dataCaixa;
         $pagamento->valor =  $saldo;
         $pagamento->saldo =  $saldo;
         $pagamento->atualizar();
@@ -313,6 +324,7 @@ if(isset($_POST['idcaixa'])){
 
         $obra = new Maobra;
 
+        $obra->data = $dataCaixa;
         $obra->cartao = $valor2;
         $obra->pix = $valor2;
         $obra->caixa_id = $_POST['idcaixa'];
@@ -330,7 +342,7 @@ if(isset($_POST['idcaixa'])){
         $valorPag = $pagamento->valor;
         $saldo = ($valorPag + $valor_jefferson );
 
-        $pagamento->data  =  $agora;
+        $pagamento->data  =  $dataCaixa;
         $pagamento->valor =  $saldo;
         $pagamento->saldo =  $saldo;
         $pagamento->atualizar();
@@ -342,6 +354,7 @@ if(isset($_POST['idcaixa'])){
 
         $obra = new Maobra;
 
+        $obra->data = $dataCaixa;
         $obra->cartao = $valor2;
         $obra->transferencia = $valor2;
         $obra->caixa_id = $_POST['idcaixa'];
@@ -359,7 +372,7 @@ if(isset($_POST['idcaixa'])){
         $valorPag = $pagamento->valor;
         $saldo = ($valorPag + $valor_jefferson);
 
-        $pagamento->data  =  $agora;
+        $pagamento->data  =  $dataCaixa;
         $pagamento->valor =  $saldo;
         $pagamento->saldo =  $saldo;
         $pagamento->atualizar();
@@ -371,6 +384,7 @@ if(isset($_POST['idcaixa'])){
 
         $obra = new Maobra;
 
+        $obra->data = $dataCaixa;
         $obra->debito = $valor2;
         $obra->pix = $valor2;
         $obra->caixa_id = $_POST['idcaixa'];
@@ -388,7 +402,7 @@ if(isset($_POST['idcaixa'])){
         $valorPag = $pagamento->valor;
         $saldo = ($valorPag + $valor_jefferson);
 
-        $pagamento->data  =  $agora;
+        $pagamento->data  =  $dataCaixa;
         $pagamento->valor =  $saldo;
         $pagamento->saldo =  $saldo;
         $pagamento->atualizar();
@@ -400,6 +414,7 @@ if(isset($_POST['idcaixa'])){
 
         $obra = new Maobra;
 
+        $obra->data = $dataCaixa;
         $obra->debito = $valor2;
         $obra->transferencia = $valor2;
         $obra->caixa_id = $_POST['idcaixa'];
@@ -417,7 +432,7 @@ if(isset($_POST['idcaixa'])){
         $valorPag = $pagamento->valor;
         $saldo = ($valorPag + $valor_jefferson);
 
-        $pagamento->data  =  $agora;
+        $pagamento->data  =  $dataCaixa;
         $pagamento->valor =  $saldo;
         $pagamento->saldo =  $saldo;
         $pagamento->atualizar();
@@ -429,6 +444,7 @@ if(isset($_POST['idcaixa'])){
 
         $obra = new Maobra;
 
+        $obra->data     = $dataCaixa;
         $obra->dinheiro = $valor_jefferson;
         $obra->caixa_id = $_POST['idcaixa'];
         $obra->veiculo = $_POST['veiculo'];
@@ -444,7 +460,7 @@ if(isset($_POST['idcaixa'])){
         $valorPag = $pagamento->valor;
         $saldo = ($valorPag + $valor_jefferson);
 
-        $pagamento->data  =  $agora;
+        $pagamento->data  =  $dataCaixa;
         $pagamento->valor =  $saldo;
         $pagamento->saldo =  $saldo;
         $pagamento->atualizar();
@@ -453,6 +469,7 @@ if(isset($_POST['idcaixa'])){
 
         $obra = new Maobra;
 
+        $obra->data = $dataCaixa;
         $obra->cartao = $valor_jefferson;
         $obra->caixa_id = $_POST['idcaixa'];
         $obra->veiculo = $_POST['veiculo'];
@@ -469,7 +486,7 @@ if(isset($_POST['idcaixa'])){
         $valorPag = $pagamento->valor;
         $saldo = ($valorPag + $valor_jefferson);
 
-        $pagamento->data  =  $agora;
+        $pagamento->data  =  $data;
         $pagamento->valor =  $saldo;
         $pagamento->saldo =  $saldo;
         $pagamento->atualizar();
@@ -479,6 +496,7 @@ if(isset($_POST['idcaixa'])){
 
         $obra = new Maobra;
 
+        $obra->data = $dataCaixa;
         $obra->debito = $valor_jefferson;
         $obra->caixa_id = $_POST['idcaixa'];
         $obra->veiculo = $_POST['veiculo'];
@@ -495,7 +513,7 @@ if(isset($_POST['idcaixa'])){
         $valorPag = $pagamento->valor;
         $saldo = ($valorPag + $valor_jefferson);
 
-        $pagamento->data  =  $agora;
+        $pagamento->data  =  $dataCaixa;
         $pagamento->valor =  $saldo;
         $pagamento->saldo =  $saldo;
         $pagamento->atualizar();
@@ -505,6 +523,7 @@ if(isset($_POST['idcaixa'])){
 
         $obra = new Maobra;
 
+        $obra->data = $dataCaixa;
         $obra->pix = $valor_jefferson;
         $obra->caixa_id = $_POST['idcaixa'];
         $obra->veiculo = $_POST['veiculo'];
@@ -521,7 +540,7 @@ if(isset($_POST['idcaixa'])){
         $valorPag = $pagamento->valor;
         $saldo = ($valorPag + $valor_jefferson);
 
-        $pagamento->data  =  $agora;
+        $pagamento->data  =  $dataCaixa;
         $pagamento->valor =  $saldo;
         $pagamento->saldo =  $saldo;
         $pagamento->atualizar();
@@ -531,6 +550,7 @@ if(isset($_POST['idcaixa'])){
 
         $obra = new Maobra;
 
+        $obra->data = $dataCaixa;
         $obra->transferencia = $valor_jefferson;
         $obra->caixa_id = $_POST['idcaixa'];
         $obra->veiculo = $_POST['veiculo'];
@@ -547,7 +567,7 @@ if(isset($_POST['idcaixa'])){
         $valorPag = $pagamento->valor;
         $saldo = ($valorPag + $valor_jefferson);
 
-        $pagamento->data  =  $agora;
+        $pagamento->data  =  $dataCaixa;
         $pagamento->valor =  $saldo;
         $pagamento->saldo =  $saldo;
         $pagamento->atualizar();
@@ -561,6 +581,8 @@ if(isset($_POST['idcaixa'])){
     }
 
     $item = new Movimentacao;
+
+    $item->data = $dataCaixa;
     $item->catdespesas_id = $_POST['catdespesas_id'];
     $item->status = $_POST['status'];
     $item->tipo = $_POST['tipo'];
@@ -596,7 +618,7 @@ if(isset($_POST['idcaixa'])){
       }
 
 
-      $pagamento->data    =  $agora;
+      $pagamento->data    =  $dataCaixa;
       $pagamento->status  =  $status;
       $pagamento->valor   =  $saldo;
       $pagamento->saldo   =  $saldo;

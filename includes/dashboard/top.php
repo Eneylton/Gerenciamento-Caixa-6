@@ -62,13 +62,13 @@ $usuario = $usuariologado ?
                         echo "";
                         break;
 
-                        case '5':
-                          echo "";
-                          break;
+                      case '5':
+                        echo "";
+                        break;
 
-                          case '6':
-                            echo "";
-                            break;
+                      case '6':
+                        echo "";
+                        break;
 
                       default:
                         echo "nav-item d-none d-sm-inline-block";
@@ -85,30 +85,30 @@ $usuario = $usuariologado ?
 
                     switch ($acesso) {
 
-                        case '2':
+                      case '2':
                         echo "nav-item d-none d-sm-inline-block";
                         break;
 
-                        case '3':
+                      case '3':
                         echo "";
                         break;
 
-                        case '4':
+                      case '4':
                         echo "";
                         break;
 
-                        case '5':
+                      case '5':
                         echo "";
                         break;
 
-                        case '6':
-                          echo "nav-item d-none d-sm-inline-block";
-                          break;
-
-                        default:
+                      case '6':
                         echo "nav-item d-none d-sm-inline-block";
                         break;
-                        }
+
+                      default:
+                        echo "nav-item d-none d-sm-inline-block";
+                        break;
+                    }
 
                     ?>" style="display: none;">
           <a href="pages/servicos/servicos-list.php" class="nav-link">Servicos extras </a>
@@ -127,13 +127,13 @@ $usuario = $usuariologado ?
                         echo "";
                         break;
 
-                        case '5':
-                          echo "";
-                          break;
+                      case '5':
+                        echo "";
+                        break;
 
-                          case '6':
-                            echo "";
-                            break;
+                      case '6':
+                        echo "";
+                        break;
 
                       default:
                         echo "nav-item d-none d-sm-inline-block";
@@ -156,13 +156,13 @@ $usuario = $usuariologado ?
                         echo "";
                         break;
 
-                        case '5':
-                          echo "";
-                          break;
+                      case '5':
+                        echo "";
+                        break;
 
-                          case '6':
-                            echo "";
-                            break;
+                      case '6':
+                        echo "";
+                        break;
 
                       default:
                         echo "nav-item d-none d-sm-inline-block";
@@ -186,13 +186,13 @@ $usuario = $usuariologado ?
                         echo "";
                         break;
 
-                        case '5':
-                          echo "";
-                          break;
+                      case '5':
+                        echo "";
+                        break;
 
-                          case '6':
-                            echo "nav-item d-none d-sm-inline-block";
-                            break;
+                      case '6':
+                        echo "nav-item d-none d-sm-inline-block";
+                        break;
 
                       default:
                         echo "nav-item d-none d-sm-inline-block";
@@ -216,12 +216,12 @@ $usuario = $usuariologado ?
                       case '4':
                         echo "";
                         break;
-                        case '5':
-                          echo "";
-                          break;
-                        case '6':
-                          echo "";
-                          break;
+                      case '5':
+                        echo "";
+                        break;
+                      case '6':
+                        echo "";
+                        break;
 
                       default:
                         echo "nav-item d-none d-sm-inline-block";
@@ -245,13 +245,13 @@ $usuario = $usuariologado ?
                         echo "";
                         break;
 
-                        case '5':
-                          echo "";
-                          break;
+                      case '5':
+                        echo "";
+                        break;
 
-                        case '6':
-                          echo "";
-                          break;
+                      case '6':
+                        echo "";
+                        break;
 
                       default:
                         echo "nav-item d-none d-sm-inline-block";
@@ -262,7 +262,35 @@ $usuario = $usuariologado ?
           <a href="pages/alinhamento/alinhamento-list.php" class="nav-link">Alinhamento / Bal</a>
         </li>
 
+        <li class="<?php
 
+                    switch ($acesso) {
+                      case '2':
+                        echo "nav-item d-none d-sm-inline-block";
+                        break;
+                      case '3':
+                        echo "";
+                        break;
+                      case '4':
+                        echo "";
+                        break;
+
+                      case '5':
+                        echo "";
+                        break;
+
+                      case '6':
+                        echo "";
+                        break;
+
+                      default:
+                        echo "nav-item d-none d-sm-inline-block";
+                        break;
+                    }
+
+                    ?>" style="display: none;">
+          <a href="pages/comissao/comissao-detalhe.php" class="nav-link">Estatísticas</a>
+        </li>
 
       </ul>
 

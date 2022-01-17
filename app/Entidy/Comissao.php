@@ -20,6 +20,7 @@ class Comissao
     public $caixa_id;
     public $valor;
     public $data;
+    public $data1;
 
     public function cadastar()
     {
@@ -30,6 +31,7 @@ class Comissao
         $this->id = $obdataBase->insert([
 
             
+            'data1'                    => $this->data1,
             'data'                     => $this->data,
             'veiculo'                  => $this->veiculo,
             'placa'                    => $this->placa,
@@ -53,6 +55,7 @@ class Comissao
         return (new Database('comissao'))->update('id = ' . $this->id, [
             
                 
+            'data1'                    => $this->data1,
             'data'                     => $this->data,
             'veiculo'                  => $this->veiculo,
             'placa'                    => $this->placa,
@@ -63,7 +66,6 @@ class Comissao
             'mecanicos_id'             => $this->mecanicos_id,
             'caixa_id'                 => $this->caixa_id,
             'valor'                    => $this->valor
-            
 
         ]);
     }

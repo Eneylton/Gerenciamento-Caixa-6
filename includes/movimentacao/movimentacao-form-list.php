@@ -185,17 +185,6 @@ $saldo = ($total_dinheiro - $saida);
 
 //PAGINAÇÂO
 
-$paginacao = '';
-$paginas = $pagination->getPages();
-
-foreach ($paginas as $key => $pagina) {
-   $class = $pagina['atual'] ? 'btn-primary' : 'btn-secondary';
-   $paginacao .= '<a href="?pagina=' . $pagina['pagina'] . '&' . $gets . '">
-
-                  <button type="button" class="btn ' . $class . '">' . $pagina['pagina'] . '</button>
-                  </a>';
-}
-
 ?>
 
 <section class="content">
@@ -332,6 +321,7 @@ foreach ($paginas as $key => $pagina) {
          <form action="./movimentacao-insert.php" method="post">
 
             <input type="hidden" name="idcaixa" value="<?= $idcaixa ?>">
+            <input type="hidden" name="datcaixa" value="<?= $data ?>">
 
             <div class="modal-header">
                <h4 class="modal-title">Movimentar
